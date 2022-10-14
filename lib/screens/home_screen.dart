@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:practiacflutter/providers/providers.dart';
+import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  UserProvider userProvider = UserProvider();
+  @override
   Widget build(BuildContext context) {
+    userProvider = Provider.of<UserProvider>(context);
+    String name = userProvider.user.name!;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("bienvenido practica flutter"),
+        title:  Text("practica flutter"),
       ),
-      body: const Center(
-        child: Text("BIENVENIDO"),
+      body: Center(
+        child: Text("BIENVENIDO "+name),
       ),
     );
   }

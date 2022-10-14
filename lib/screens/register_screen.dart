@@ -12,7 +12,12 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   var formKey = GlobalKey<FormState>();
-  Map<String, String> formData = {'email': '', 'password': ''};
+  Map<String, String> formData = {
+    'email': '',
+    'password': '',
+    'name': '',
+    'lastname': ''
+  };
   RegisterProvider registerProvider = RegisterProvider();
 
   @override
@@ -43,6 +48,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     children: [
                       const AppTitle('Registrar usuario'),
                       const SizedBox(height: 25),
+                      AppFormField('name', 'Ingrese su nombre',
+                          formData: formData,
+                          icon: Icons.textsms_outlined, validator: (value) {
+                        if (value!.length < 4) {
+                          return "Nombre no valido";
+                        }
+                        return null;
+                      }),
+                      AppFormField('lastname', 'Ingrese su apellido',
+                          formData: formData,
+                          icon: Icons.textsms_outlined, validator: (value) {
+                        if (value!.length < 4) {
+                          return "Apellido no valido";
+                        }
+                        return null;
+                      }),
                       AppFormField('email', 'Correo electronico',
                           formData: formData,
                           icon: Icons.email_outlined, validator: (value) {
@@ -79,7 +100,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (formKey.currentState!.validate()) {
       bool respuesta = await registerProvider.registrarUsuario(formData);
       if (respuesta) {
-        AppDialogs.showDialog1(context, 'Usuario registrado');
+        AppDialogs.showDialog1(context, 'Usuario registrado con exito');
       } else {
         AppDialogs.showDialog1(context, 'No se pudo registrar');
       }
