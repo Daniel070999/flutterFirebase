@@ -16,16 +16,22 @@ class AppDrawer extends StatelessWidget {
           )),
           ListTile(
             title: Text('Home'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, 'home');
+            },
             selected: true,
           ),
           ListTile(
             title: Text('Mapa'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, 'mapa');
+            },
           ),
           ListTile(
-            title: Text('Temp 1'),
-            onTap: () {},
+            title: Text('acerca'),
+            onTap: () {
+              Navigator.pushReplacementNamed(context, 'acerca');
+            },
           ),
           ListTile(
             title: Text('Temp 2'),

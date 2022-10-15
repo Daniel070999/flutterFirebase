@@ -30,13 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   loadSharedPreferences() async {
     pref = await SharedPreferences.getInstance();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    loginProvider = Provider.of<LoginProvider>(context);
-    userProvider = Provider.of<UserProvider>(context);
-
     if (pref != null) {
       emailController.text = pref!.getString("email").toString();
       passwordController.text = pref!.getString("password").toString();
@@ -44,6 +37,12 @@ class _LoginScreenState extends State<LoginScreen> {
       formData['password'] = passwordController.text;
       setState(() {});
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    loginProvider = Provider.of<LoginProvider>(context);
+    userProvider = Provider.of<UserProvider>(context);
 
     return Scaffold(
         body: Container(
