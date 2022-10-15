@@ -6,15 +6,17 @@ class AppFormField extends StatelessWidget {
   final IconData? icon;
   final bool obscureText;
   final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   const AppFormField(
     this.name,
-    this.label,{
+    this.label, {
     Key? key,
     this.icon,
     this.obscureText = false,
     required this.formData,
     required this.validator,
+    this.controller,
   }) : super(key: key);
 
   final Map<String, String> formData;
@@ -22,7 +24,8 @@ class AppFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: (value){
+      controller: controller,
+      onChanged: (value) {
         formData[name] = value;
       },
       obscureText: obscureText,
@@ -34,4 +37,3 @@ class AppFormField extends StatelessWidget {
     );
   }
 }
-
