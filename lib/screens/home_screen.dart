@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practiacflutter/providers/providers.dart';
+import 'package:practiacflutter/widgets/app_bar.dart';
 import 'package:practiacflutter/widgets/app_drawer.dart';
 import 'package:provider/provider.dart';
 
@@ -19,9 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     String name = userProvider.user.name!;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("practica flutter"),
-      ),
+      appBar: getAppBar(context,'App bar home',userProvider.user),
       drawer: AppDrawer(),
       body: Center(
         child: Text("BIENVENIDO " + name),
@@ -29,5 +28,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
- 

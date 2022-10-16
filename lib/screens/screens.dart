@@ -1,3 +1,4 @@
+export 'package:practiacflutter/screens/profile_screen.dart';
 export 'package:practiacflutter/screens/acerca_screen.dart';
 export 'package:practiacflutter/screens/mapa_screen.dart';
 export 'package:practiacflutter/screens/home_screen.dart';
