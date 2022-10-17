@@ -34,6 +34,10 @@
 	<string>Permiso para usar la camara</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Permiso para usar el micrófono</string>
+	<key>UIBackgroundModes</key>
+	<string>location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

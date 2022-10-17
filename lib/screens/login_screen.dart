@@ -133,14 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
           pref!.setString("email", usuario.email!);
           pref!.setString("password", formData['password']!);
         }
-        AppDialogs.showDialog2(context, 'Usuario autenticado', [
-          TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-                Navigator.pushReplacementNamed(context, 'home');
-              },
-              child: const Text("OK"))
-        ]);
+        Navigator.popAndPushNamed(context, 'home');
       } else {
         AppDialogs.showDialog1(context, 'No se pudo iniciar sesion');
       }

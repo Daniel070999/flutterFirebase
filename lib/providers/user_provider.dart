@@ -13,6 +13,11 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  setUserLocation(double latitud, double longitud){
+    user.setLocation(latitud, longitud);
+    notifyListeners();
+  }
+
   Future<bool> updateUsuario(Map<String, String> formData) async {
     var urlDb = Uri.parse(
         'https://practicaflutter-6e5e0-default-rtdb.firebaseio.com/users/' +

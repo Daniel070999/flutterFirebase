@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:practiacflutter/app_config.dart';
 import 'package:practiacflutter/providers/providers.dart';
 import 'package:provider/provider.dart';
-import 'screens/screens.dart';
 
 void main() => runApp(AppState());
 
